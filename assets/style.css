@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header div{
+    background-color: #047bff;
+    padding: 10px;
+}
+
+#consulta{
+    display: none;
+}
+
+#consulta a{
+    width: 90px;
+    cursor: pointer;
+    color: #ffffff73;
+    margin: 10px 0px 6px 40px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#consulta a:hover{
+    color: white;
+}
+
+#logo{
+    margin-left: 60px;
+}
+
+#menu{
+    padding: 10px;
+    float: right;
+    border: 1px solid #ffffff3e;
+    position: relative;
+    right: 10px;
+    cursor:pointer;
+}
+
+/* MAIN */
+
+main{
+    text-align: center;
+    width: 1400px;
+    height: 200px;
+    margin:20px auto;
+}
+
+h1{
+    font-size: 4em;
+    font-family:'Poppins', sans-serif;;
+    color: rgb(35, 35, 35);
+}
+
+#inputs{
+    margin-top: 40px;
+}
+
+select,input{
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 6px;
+
+}
+
+select:focus,input:focus{
+    border: 1px solid #047bff;
+    box-shadow:  0px 0px 3px 2px #047bff;
+}
+
+button{
+    width: 30px;
+    height: 36px;
+    font-size: 20px;
+    background-color: #047bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 2px;
+}
+
+/* INPUTS */
+
+#ano{
+    width: 130px;
+}
+
+#tipo{
+    width: 400px;
+}
+
+#valor{
+    margin-left: 6px;
+    width: 100px;
+}
+
+#descricao{
+    width: 600px;
+}
+
+#descricao::placeholder,#valor::placeholder,#dia::placeholder{
+    color: black;
+}
+
+/* CONSULTA */
+
+fieldset{
+    width: 900px;
+    margin: auto;
+}
+
+#lista_resultado{
+    margin: auto;
+    border: 1px solid red;
+    width: 900px;
+    height: 260px;
+}
+
+#infoDiv{
+    margin:50px auto;
+    width: 900px;
+    height: 40px;
+    border-top: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+}
+
+#infoDiv p{
+    display: inline;
+}
