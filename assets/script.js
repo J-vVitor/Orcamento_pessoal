@@ -8,6 +8,18 @@ function teste() {
     }
 }
 
+let valor = document.querySelector("#valor")
+
+valor.addEventListener('keypress', () =>{
+    let inputLength = valor.value.length
+
+    if(inputLength === 3){
+        valor.value += ','
+    }
+})
+
+
+
 
 class Despesas {
     constructor(ano, mes, dia, tipo, descricao, valor) {
@@ -20,6 +32,14 @@ class Despesas {
     }
 }
 
+class Bd {
+    gravar(d){
+        localStorage.setItem('despesas',JSON.stringify(d))
+    }
+}
+
+let bd = new Bd()
+
 function cadastrarDespesas() {
 
     let ano = document.querySelector('#ano').value
@@ -31,13 +51,8 @@ function cadastrarDespesas() {
 
     let despesas = new Despesas(ano, mes, dia, tipo, descricao, valor)
 
-    gravar(despesas)
 
+    bd.gravar(despesas)
 }
-
-function gravar(d){
-    localStorage.setItem('despesas',JSON.stringify(d))
-}
-
 
 
