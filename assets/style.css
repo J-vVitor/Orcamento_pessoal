@@ -132,3 +132,104 @@ fieldset{
 #infoDiv p{
     display: inline;
 }
+
+/* MEDIA ------------ */
+
+
+@media screen and (max-width: 700px){
+    *{
+        box-sizing: border-box;
+    }
+
+    html{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    h1{
+        width: 600px;
+    }
+
+    #inputs{
+
+        width: 600px;
+        height: 300px;
+    }
+
+    #ano{
+        margin-right: 10px;
+        width: 210px;
+    }
+
+    #mes{
+        width: 170px;
+        margin-right: 10px;
+    }
+
+    #tipo{
+        width: 500px;
+    }
+
+    #descricao{
+        width: 500px;
+    }
+    #valor{
+        display: block;
+        width: 500px;
+        margin:10px 0px 0px 50px;
+    }
+
+    #btnEnvio{
+        margin-top: 10px;
+        width: 500px;
+    }
+}
+
+@media screen and (min-width:701px) and (max-width:800px) {
+    *{
+        box-sizing: border-box;
+    }
+
+    html{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    h1{
+        width: 700px;
+    }
+
+    #inputs{
+
+        width: 700px;
+        height: 300px;
+    }
+
+    #ano{
+        margin-right: 10px;
+        width: 210px;
+    }
+
+    #mes{
+        width: 170px;
+        margin-right: 10px;
+    }
+
+    #tipo{
+        width: 500px;
+    }
+
+    #descricao{
+        width: 500px;
+    }
+    #valor{
+        display: block;
+        width: 500px;
+        margin:10px 0px 0px 100px;
+    }
+
+    #btnEnvio{
+        margin-top: 10px;
+        width: 500px;
+    }
+}
