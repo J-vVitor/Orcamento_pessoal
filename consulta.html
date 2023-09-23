@@ -10,79 +10,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <script src="/assets/script.js"></script>
 
 </head>
 
-<body>
+<body onload="carregarTodasDespesas()">
 
-    <body>
-        <header>
-            <div>
-                <img src="assets/img/logo_pronto.png" id="logo" alt="">
-                <img src="assets/img/menu-principal.png" id="menu" onclick="teste()">
-            </div>
-            <div id="consulta">
-                <a href="index.html" target="_parent">Cadastro</a>
-                <a href="consulta.html" target="_parent">Consulta</a>
-            </div>
-        </header>
+    <header>
+        <div>
+            <img src="assets/img/logo_pronto.png" id="logo" alt="">
+            <img src="assets/img/menu-principal.png" id="menu" onclick="teste()">
+        </div>
+        <div id="consulta">
+            <a href="index.html" target="_parent">Cadastro</a>
+            <a href="consulta.html" target="_parent">Consulta</a>
+        </div>
+    </header>
 
-        <main>
-            <h1>Registro de Novas Despesas</h1>
+    <div id="infoDiv">
+        <p>Data</p>
+        <p>Tipo</p>
+        <p>Descrição</p>
+        <p>Valor</p>
+    </div>
 
-            <div id="inputs">
-                <select id="ano">
-                    <option value="">Ano</option>
-                    <option value="2023">2023</option>
-                </select>
+    <div id="lista_resultado">
 
-                <select id="mes">
-                    <option value="">Mês</option>
-                    <option value="1">Janeiro</option>
-                    <option value="2">Fevereiro</option>
-                    <option value="3">Março</option>
-                    <option value="4">abril</option>
-                    <option value="5">Maio</option>
-                    <option value="6">Junho</option>
-                    <option value="7">Julho</option>
-                    <option value="8">Agosto</option>
-                    <option value="9">Setembro</option>
-                    <option value="10">Outubro</option>
-                    <option value="11">Novembro</option>
-                    <option value="12">Dezembro</option>
-                </select>
+    </div>
 
-                <input type="number" min="1" max="31" placeholder="Dia" id="dia">
-
-                <select id="tipo">
-                    <option value="">Tipo</option>
-                    <option value="alimentacao">Alimentação</option>
-                    <option value="saude">Saúde</option>
-                    <option value="educacao">Educação</option>
-                    <option value="lazer">Lazer</option>
-                    <option value="transporte">Transporte</option>
-                </select>
-
-                <div>
-                    <input type="text" id="descricao" placeholder="Descrição">
-                    <input type="text" placeholder="valor" id="valor">
-                    <button type="submit" id="btnEnvio" onclick="cadastrarDespesas()">+</button>
-                </div>
-            </div>
-
-            <div id="infoDiv">
-                <p>Data</p> <p>Tipo</p> <p>Descrição</p>  <p>Valor</p>
-               </div>
-       
-               <div id="lista_resultado">
-                    r
-               </div>
-        </main>
-
-       
-
-        <script src="/assets/script.js"></script>
-    </body>
 </body>
 
 </html>
