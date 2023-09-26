@@ -3,22 +3,11 @@ function teste() {
 
     if (consulta.style.display == 'none') {
         consulta.style.display = 'block'
+
     } else {
         consulta.style.display = 'none'
     }
 }
-
-let valor = document.querySelector("#valor")
-
-/*valor.addEventListener('keypress', () => {
-    let inputLength = valor.value.length
-
-    if(inputLength === 3){
-        valor.value += ','
-    }
-})*/
-
-
 
 
 class Despesas {
@@ -66,17 +55,21 @@ class Bd {
 
         let despesas = Array()
 
-        let id = JSON.parse(localStorage.getItem('id'))
+        let id = localStorage.getItem('id')
 
         for (let i = 1; i <= id; i++) {
-            let despesa = localStorage.getItem(i)
+            let despesa = JSON.parse(localStorage.getItem(i))
+            console.log(despesa)
+
+            if (despesa === null) {
+                continue
+            }
 
             despesas.push(despesa)
         }
 
-        console.log(despesas)
+        return despesas
     }
-
 
 }
 
@@ -129,11 +122,31 @@ class TesteButton {
 
 let testeButton = new TesteButton()
 
+// CONSULTA
+
 function carregarTodasDespesas() {
-    bd.recuperarTodosRegistros()
+
+   let despesa = bd.recuperarTodosRegistros()
+
+   let tbodys = document.getElementById('tbodys')
+
+   despesa.forEach(function(d){
+    console.log(d)
+
+    let linha = tbodys.insertRow()
+
+    linha.insertCell(0).innerHTML = d.dia + '/' + d.mes + '/' + d.ano
+    linha.insertCell(1).innerHTML = d.tipo
+    linha.insertCell(2).innerHTML = d.descricao
+    linha.insertCell(3).innerHTML = d.valor
+
+   })
 }
 
-let resultado = document.querySelector('#lista_resultado')
+
+
+
+
 
 
 
