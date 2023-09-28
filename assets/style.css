@@ -117,22 +117,45 @@ select:focus,input:focus{
     padding: 10px;
 }
 
+#btnPesquisa{
+    background-color: #047bff;
+    width: 40px;
+    height: 30px;
+    margin: 4px auto;
+    border-radius: 6px;
+}
+
+#btnPesquisa img{
+    position: relative;
+    left: 10px;
+    top: 4px;
+}
+
+#btnPesquisa button{
+    background-color: #047bff;
+    border: none
+}
+
 table{  
     font-size: 26px;
     border-collapse: collapse;
-    border-top: 1px solid darkgrey; 
+    border-top: 1px solid rgb(104, 104, 104); 
 }
 
 tbody{
-    border-top: 1px solid darkgrey;
+    border-top: 1px solid rgb(104, 104, 104);
 }
 
 thead td{
     padding: 14px;
+    font-weight: 700;
+    
+   
 }
 
 tbody td{
     padding: 14px;
+    border-bottom: 1px solid lightgrey
 }
 
 

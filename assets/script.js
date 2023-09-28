@@ -27,6 +27,7 @@ class Despesas {
             }
         }
         return true
+
     }
 }
 
@@ -90,8 +91,15 @@ function cadastrarDespesas() {
 
     if (despesas.validarDdos()) {
         bd.gravar(despesas)
-
         testeButton.valido()
+
+        this.ano.value = ''
+        this.mes.value = ''
+        this.dia.value = ''
+        this.tipo.value = ''
+        this.descricao.value = ''
+        this.valor.value = ''
+
     } else {
         testeButton.erro()
     }
@@ -126,21 +134,35 @@ let testeButton = new TesteButton()
 
 function carregarTodasDespesas() {
 
-   let despesa = bd.recuperarTodosRegistros()
+    let despesa = bd.recuperarTodosRegistros()
 
-   let tbodys = document.getElementById('tbodys')
+    let tbodys = document.getElementById('tbodys')
 
-   despesa.forEach(function(d){
-    console.log(d)
+    despesa.forEach(function (d) {
+        console.log(d)
 
-    let linha = tbodys.insertRow()
+        let linha = tbodys.insertRow()
 
-    linha.insertCell(0).innerHTML = d.dia + '/' + d.mes + '/' + d.ano
-    linha.insertCell(1).innerHTML = d.tipo
-    linha.insertCell(2).innerHTML = d.descricao
-    linha.insertCell(3).innerHTML = d.valor
+        linha.insertCell(0).innerHTML = d.dia + '/' + d.mes + '/' + d.ano
+        linha.insertCell(1).innerHTML = d.tipo
+        linha.insertCell(2).innerHTML = d.descricao
+        linha.insertCell(3).innerHTML = d.valor
 
-   })
+    })
+}
+
+function pesquisarDespesa(){
+
+    let ano = document.querySelector('#ano').value
+    let mes = document.querySelector('#mes').value
+    let dia = document.querySelector('#dia').value
+    let tipo = document.querySelector('#tipo').value
+    let descricao = document.querySelector('#descricao').value
+    let valor = document.querySelector('#valor').value
+
+    let despesas = new Despesas(ano, mes, dia, tipo, descricao, valor)
+
+    console.log(despesas)
 }
 
 
