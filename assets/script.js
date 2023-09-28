@@ -60,7 +60,7 @@ class Bd {
 
         for (let i = 1; i <= id; i++) {
             let despesa = JSON.parse(localStorage.getItem(i))
-            console.log(despesa)
+            //console.log(despesa)
 
             if (despesa === null) {
                 continue
@@ -73,7 +73,15 @@ class Bd {
     }
 
     pesquisar(despesa){
-        console.log(despesa)
+        //console.log(despesa)
+        
+        let despesaFiltrada = Array()
+
+        despesaFiltrada = this.recuperarTodosRegistros()
+
+        //console.log(despesaFiltrada)
+
+        console.log(despesaFiltrada.filter(d => d.tipo == 'lazer'))
     }
 
 }
@@ -91,6 +99,8 @@ function cadastrarDespesas() {
     let valor = document.querySelector('#valor').value
 
     let despesas = new Despesas(ano, mes, dia, tipo, descricao, valor)
+
+    
 
 
     if (despesas.validarDdos()) {
@@ -143,7 +153,7 @@ function carregarTodasDespesas() {
     let tbodys = document.getElementById('tbodys')
 
     despesa.forEach(function (d) {
-        console.log(d)
+        //console.log(d)
 
         let linha = tbodys.insertRow()
 
