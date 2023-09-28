@@ -72,6 +72,10 @@ class Bd {
         return despesas
     }
 
+    pesquisar(despesa){
+        console.log(despesa)
+    }
+
 }
 
 
@@ -162,7 +166,7 @@ function pesquisarDespesa(){
 
     let despesas = new Despesas(ano, mes, dia, tipo, descricao, valor)
 
-    console.log(despesas)
+    bd.pesquisar(despesas)
 }
 
 
