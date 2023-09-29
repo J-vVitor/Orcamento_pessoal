@@ -73,15 +73,44 @@ class Bd {
     }
 
     pesquisar(despesa){
-        //console.log(despesa)
+        console.log(despesa)
         
         let despesaFiltrada = Array()
 
         despesaFiltrada = this.recuperarTodosRegistros()
 
-        //console.log(despesaFiltrada)
 
-        console.log(despesaFiltrada.filter(d => d.tipo == 'lazer'))
+        //console.log(despesaFiltrada.filter(f=> f.descricao == 'Comemoração').filter(f => f.tipo == 'transporte'))
+
+        //ANO
+        if(despesa.ano != ''){
+            console.log('filtro de ano')
+            despesaFiltrada =  despesaFiltrada.filter(d=> d.ano == despesa.ano)
+        }
+
+        //DIA
+        if(despesa.dia != ''){
+            console.log('filtro de dia')
+            despesaFiltrada = despesaFiltrada.filter(d=> d.dia == despesa.dia)
+        }
+        //Tipo
+        if(despesa.tipo != ''){
+            console.log('filtro de Tipo')
+            despesaFiltrada = despesaFiltrada.filter(d=> d.tipo== despesa.tipo)
+        }
+        //DESCRIÇÃO
+        if(despesa.descricao != ''){
+            console.log('filtro de Descrição')
+            despesaFiltrada = despesaFiltrada.filter(d=> d.descricao == despesa.descricao)
+        }
+        //Valor
+        if(despesa.valor != ''){
+            console.log('filtro de valor')
+            despesaFiltrada = despesaFiltrada.filter(d=> d.valor == despesa.valor)
+        }
+        
+
+        console.log(despesaFiltrada)
     }
 
 }
