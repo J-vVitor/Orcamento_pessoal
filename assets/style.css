@@ -118,6 +118,21 @@ select:focus,input:focus{
     width: 760px;
 }
 
+#infoTabela button{
+   background-color: #D3334D;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+}
+
+#infoTabela button:hover{
+    background-color: #dd1032;
+   
+}
+
+
+
 #btnPesquisa{
     background-color: #047bff;
     width: 40px;

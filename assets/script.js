@@ -65,7 +65,7 @@ class Bd {
             if (despesa === null) {
                 continue
             }
-
+            despesa.id = i
             despesas.push(despesa)
         }
 
@@ -86,6 +86,12 @@ class Bd {
         if(despesa.ano != ''){
             console.log('filtro de ano')
             despesaFiltrada =  despesaFiltrada.filter(d=> d.ano == despesa.ano)
+        }
+
+        //MÊS
+        if(despesa.mes != ''){
+            console.log('Filtro de mês')
+            despesaFiltrada = despesaFiltrada.filter(d=> d.mes == despesa.mes)
         }
 
         //DIA
@@ -110,7 +116,11 @@ class Bd {
         }
         
 
-        console.log(despesaFiltrada)
+        return despesaFiltrada
+    }
+
+    remover(id){
+        localStorage.removeItem(id)
     }
 
 }
@@ -136,12 +146,16 @@ function cadastrarDespesas() {
         bd.gravar(despesas)
         testeButton.valido()
 
+        
+
         this.ano.value = ''
         this.mes.value = ''
         this.dia.value = ''
         this.tipo.value = ''
         this.descricao.value = ''
         this.valor.value = ''
+
+       
 
     } else {
         testeButton.erro()
@@ -190,6 +204,21 @@ function carregarTodasDespesas() {
         linha.insertCell(1).innerHTML = d.tipo
         linha.insertCell(2).innerHTML = d.descricao
         linha.insertCell(3).innerHTML = d.valor
+
+        // Criar botão de exclusão
+
+        let btn = document.createElement("button")
+
+        btn.innerHTML = '<img src="assets/img/botao-x.png" alt="">'
+        btn.id = d.id
+        btn.onclick = function(){
+            //alert(this.id)
+            bd.remover(this.id)
+            window.location.reload()
+        }
+        linha.insertCell(4).append(btn)
+
+        console.log(d)
 
     })
 }
